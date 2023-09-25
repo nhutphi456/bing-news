@@ -1,0 +1,12 @@
+<div *ngIf="data.urlToImage" class="news-card rounded overflow-hidden shadow-lg w-full min-h-350">
+    <div class="w-full h-1/2"
+        style="background: url('{{data.urlToImage}}') no-repeat center center; background-size: cover;"></div>
+    <div class="px-6 py-4">
+        <a href="{{data.url}}" target="_blank" rel="noopener">
+            <div class="font-bold text-lg mb-2">{{data.title}}</div>
+        </a>
+    </div>
+    <div class="px-6 pt-4 pb-2">
+
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="col-span-2" style="min-height: 350px;">
+    <div id="newsCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
+        <div class="carousel-indicators">
+            <slider-pagination *ngFor="let item of sliderItems.articles" data="item"></slider-pagination>
+        </div>
+        <div class="carousel-inner">
+            <news-slider-item *ngFor="let item of sliderItems.articles" data="item"></news-slider-item>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<!-- 
+
+ -->

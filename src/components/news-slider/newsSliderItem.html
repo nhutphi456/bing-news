@@ -1,0 +1,10 @@
+<div 
+  *ngIf="data.urlToImage" 
+  class="carousel-item {{index === 0 ? 'active' : '' }}" 
+  style="height: 350px;"
+>
+  <img src={{data.urlToImage}} class="d-block w-100" alt={{data.title}}>
+  <div class="carousel-caption d-none d-md-block">
+    <h2>{{data.title}} </h2>
+  </div>
+</div>
