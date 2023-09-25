@@ -1,9 +1,9 @@
 <div class="col-span-2" style="min-height: 350px;">
-    <div id="newsCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
+    <div id="newsCarousel" class="carousel" data-bs-ride="carousel" data-bs-interval="2000">
         <div class="carousel-indicators">
             <slider-pagination *ngFor="let item of sliderItems.articles" data="item"></slider-pagination>
         </div>
-        <div class="carousel-inner">
+        <div class="carousel-inner rounded">
             <news-slider-item *ngFor="let item of sliderItems.articles" data="item"></news-slider-item>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
@@ -17,6 +17,3 @@
     </div>
 </div>
 
-<!-- 
-
- -->

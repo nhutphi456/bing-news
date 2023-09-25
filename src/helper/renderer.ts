@@ -20,7 +20,8 @@ export class Renderer {
     elementObs.subscribe(async (el: HTMLElement) => {
       if (el.tagName in declaration) {
         const { newEl, parent } = await this.buildView(declaration, el);
-
+        
+        if(!parent) return
         this.replaceChildren(newEl, el);
         elChildren = parent.children;
       } else {

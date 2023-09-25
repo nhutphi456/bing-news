@@ -7,6 +7,9 @@ import { News } from "./components/news/news";
 import { NewsList } from "./components/news/newsList";
 import { Sport } from "./components/sport/sport";
 import { SportItem } from "./components/sport/sportItem";
+import { TopNews } from "./components/top-news/topNews";
+import { TopNewsCard } from "./components/top-news/topNewsCard";
+import { TopNewsItem } from "./components/top-news/topNewsItem";
 import { AppModule } from "./controller/appModule";
 import { AppState } from "./controller/appState";
 import { NewsService } from "./services/newsService";
@@ -24,7 +27,10 @@ app.declareComponents(
   NewsSlider,
   SportItem,
   NewsSliderItem,
-  SliderPagination
+  SliderPagination,
+  TopNews,
+  TopNewsItem,
+  TopNewsCard
 );
 app.declareServices(NewsService);
 

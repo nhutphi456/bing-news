@@ -18,11 +18,15 @@ export class AppState {
     return this.stateSubject.asObservable();
   }
 
-  addState<T = unknown>(promise: Promise<T>, key: string): T {
+  addState<T = unknown>(promise: Promise<T>, key: string, callback?: Function): T {
     if (key in this.state) return this.state[key];
     
     promise.then((data) => {
-      this.state = { ...this.state, [key]: data };
+      if(callback) {
+        this.state = { ...this.state, [key]: callback(data) };
+      } else {
+        this.state = { ...this.state, [key]: data };
+      }
       this.stateSubject.next(this.state);
 
       return this.state[key];
