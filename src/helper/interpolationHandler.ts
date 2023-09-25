@@ -3,7 +3,7 @@ import { ViewHandler } from "../interfaces/viewHandler";
 
 export class InterpolationHandler extends ViewHandler {
   public handle(instance: InstanceType<Component>, view: string): string {
-    view = view.replace(/{{(.*?)}}/g, (match, key) => {
+    view = view.replace(/{{([^{}]+)}}/g, (match, key) => {
       const ternaryExpression = this.extractTernary(key);
 
       if (ternaryExpression) {
@@ -25,7 +25,7 @@ export class InterpolationHandler extends ViewHandler {
     expression: string
   ): { condition: string; expression1: string; expression2: string } | null {
     const ternaryExpressionPattern = /^(.*?) \? (.*?) : (.*)$/;
-    const match = expression.match(ternaryExpressionPattern);
+    const match = ternaryExpressionPattern.exec(expression);
 
     if (match && match.length === 4) {
       return {
