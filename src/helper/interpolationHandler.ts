@@ -8,11 +8,12 @@ export class InterpolationHandler extends ViewHandler {
 
       if (ternaryExpression) {
         const { condition, expression1, expression2 } = ternaryExpression;
-        const prop = condition.split("===");
-        const evalExpression = new Function(`return this.${prop[0]} === ${prop[1]}`);
-        const value = evalExpression.call(instance);
+        const [propertyPath, expectedValue] = condition.split("===");
+        const value = this.getNestedPropertyValue(instance, propertyPath.trim());
 
-        return value ? this.replaceSingleQuote(expression1) : this.replaceSingleQuote(expression2);
+        return value === parseInt(expectedValue)
+          ? this.replaceSingleQuote(expression1)
+          : this.replaceSingleQuote(expression2);
       } else {
         return this.getNestedPropertyValue(instance, key);
       }
